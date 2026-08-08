@@ -326,9 +326,7 @@ label:has(+ input:required):after {
 }
 
 /* CSS pricing-table */
-.wrapper {
-    width: 100vw;
-    height: 100vh;
+.pricing-body {
     background: #edeef7;
 }
 
@@ -342,27 +340,30 @@ label:has(+ input:required):after {
 .pricing-footer {
     text-align: center;
 }
+.pricing-body{
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
 
 .pricing-plan {
-    width: 300px;
-    min-height: 500px;
     background: #fff;
-    display: inline-block;
     border-radius: 25px;
     text-align: left;
     padding: 40px;
-    vertical-align: middle;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+    flex-grow: 1;
+    flex-basis: 0;
 }
 .pricing-plan:hover {
     box-shadow: 3px 5px 10px rgb(35, 28, 112, 0.4);
 }
 
 .pricing-body .pricing-plan:nth-child(2) {
-    margin-left: 20px;
-    margin-right: 20px;
     background-color: #231c70;
-    width: 320px;
-    min-height: 540px;
     color: #fff;
 }
 
@@ -387,15 +388,12 @@ label:has(+ input:required):after {
 }
 
 .plan-title {
-    font-size: 28px;
+    font-size: 3rem;
     font-weight: 700;
-    margin-bottom: 30px;
 }
 .plan-price {
     font-size: 36px;
     font-weight: 700;
-
-    margin-bottom: 10px;
 }
 
 .pricing-body .pricing-plan:not(:nth-child(2)) .plan-price {
@@ -406,8 +404,6 @@ label:has(+ input:required):after {
     color: #adadad;
 }
 .plan-features {
-    margin-top: 20px;
-    margin-bottom: 20px;
     line-height: 25px;
 }
 .plan-features li::before {
@@ -415,8 +411,7 @@ label:has(+ input:required):after {
     color: green;
 }
 .additional-features {
-    margin-top: 20px;
-    margin-bottom: 10px;
+    align-self: stretch;
     padding-top: 20px;
     border-top: solid 1px #adadad;
     font-size: 12px;
