@@ -50,7 +50,9 @@ body {
 a, a:visited {
     text-decoration: none;
 }
-
+.box-index{
+    padding: 48px;
+}
 .cv-page {
     background-color: #6d2c2c;
     --primary-color: #21212a;
@@ -114,8 +116,9 @@ a, a:visited {
 }
 
 .box-cv-experience h3 {
-    text-align: justify;
-    margin-bottom: -25px;
+    display: flex;
+    justify-content: space-between;
+
 }
 
 .box-cv-experience h3 span {
@@ -126,216 +129,33 @@ a, a:visited {
     width: 100%;
 }
 
-/* css cho bài 2. Menu */
-.box-menu {
-    width: 1280px;
-    margin-right: auto;
-    margin-left: auto;
-}
-
-.menu {
-    background-color: #3e5cca;
-    border-top: 5px solid #fff;
-    font-size: 0;
-}
-
-.menu li {
-    display: inline-block;
-    text-align: center;
-}
-
-.menu li a {
-    display: inline-block;
-    color: #fff;
-    font-size: 18px;
-    font-weight: 600;
-    padding: 15px 15px;
-}
-/* Thêm hiệu ứng hover cho các mục menu */
-.menu li a:hover {
-    background-color: #fff;
-    color: #333333;
-}
-/* Tạo hiệu ứng active khi click vào menu */
-.menu li a:active {
-    background-color: #d6ddff;
-    color: #333333;
-}
-
-.page-bg {
-    width: 100%;
-    height: 600px;
-    background-color: #f2f2f2;
-}
-
-.menu > li {
-    position: relative;
-}
-.sub-menu {
-    width: 250px;
-    display: none;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    background-color: #3e5cca;
-    padding: 0;
-}
-
-.menu li:hover .sub-menu {
-    display: block;
-}
-
-/* tạo vách ngăn giữa các mục trên menu */
-.menu > li:not(:last-child) {
-    border-right: 1px solid #fff;
-}
-.menu li .sub-menu li:not(:last-child) {
-    border-bottom: 1px solid #fff;
-}
-/* thêm một biểu tượng (icon) nhỏ trước mỗi thẻ li hoặc a trong menu */
-.menu li a::before {
-    content: "« ";
-}
-.menu li a::after {
-    content: " »";
-}
-
-/* css cho form */
-.form {
-    width: 100%;
-    height: 100%;
-    background-color: #f1c698;
-}
-
-.box-form {
-    width: 400px;
-    margin: 30px auto;
-    border-radius: 15px;
-    padding: 20px 20px;
-    background-color: #fff;
-    /* background-image: linear-gradient(to right, #ECE9E6 0%, #FFFFFF 51%, #ECE9E6 100%); */
-}
-.form-heading {
-    text-align: center;
-    font-size: 24px;
-    font-weight: 650;
-    margin-bottom: 20px;
-}
-.form-group {
-    font-size: 16px;
-    padding: 6px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.form-group .form-text {
-    border-radius: 10px;
-    border: 1px solid transparent;
-    background-color: #f1f4f9;
-    font-size: 16px;
-    width: 100%;
-    color: #333333;
-    padding: 5px 5px;
-}
-
-.form-group .form-text::placeholder {
-    color: #b1c7d3;
-}
-
-/* tắt outline khi focus - mặc định của trình duyệt */
-input:focus-visible {
-    outline: none;
-}
-/* tất cả input đổi màu viền khi focus */
-.form-group .form-text:focus {
-    background-color: aliceblue;
-    border: solid 1px #ffe4c7;
-}
-
-.form-label {
-    display: inline-block;
-    padding-bottom: 6px;
-    font-weight: 500;
-}
-
-.form .avatar {
-    border-radius: 50%;
-    width: 100px;
-    height: 100px;
-    cursor: pointer;
-}
-
-.btn {
-    display: inline-block;
-    border: none;
-    background-color: #fe9305;
-    color: #fff;
-    text-decoration: none;
-    font-weight: 500;
-    padding: 5px 16px;
-    border-radius: 20px;
-    min-width: 100px;
-    text-align: center;
-    width: 100%;
-}
-.box-vertical label {
-    display: block;
-}
-.form-footer {
-    margin-top: 20px;
-}
-
-.link-item a {
-    line-height: 2;
-    color: #333333;
-}
-/* nhập text vào các input, 
-nếu có lỗi (invalid) thì đổi màu viền input sang đỏ */
-.form-text:focus:invalid {
-    border: 1px solid rgb(255, 84, 84);
-}
-
-/* thêm dấu sao đỏ (*) cho các trường bắt buộc */
-label:has(+ input:required):after {
-    content: "*";
-    color: red;
-    margin-left: 2px;
-}
-
-/* Tạo hiệu ứng hover và active cho nút submit */
-.btn:hover {
-    background-color: #fca62e;
-}
-.btn:active {
-    background-color: #fd9400;
-    color: #b8e5fd;
-}
-
-/* Thêm style cho container/form khi có phần tử trong form được focus */
-.box-form:focus-within {
-    outline: 2px solid #ff9b18;
-    box-shadow: 0 0 10px rgba(255, 155, 24, 0.7);
-}
-
 /* CSS pricing-table */
 .pricing-body {
     background: #edeef7;
 }
-
+.pricing-wrapper{
+    display: flex;
+    flex-direction: column;
+}
 .pricing-header,
 .pricing-footer {
     height: 100px;
-    line-height: 100px;
 }
 .pricing-header,
 .pricing-body,
 .pricing-footer {
-    text-align: center;
-}
-.pricing-body {
     display: flex;
     justify-content: center;
-    gap: 20px;
+}
+.pricing-header,
+.pricing-footer {
+    align-items: center
+}
+.pricing-body, .pricing-header {    
+    gap: 24px;
+}
+.pricing-header {    
+    gap: 8px;
 }
 
 .pricing-plan {
@@ -364,12 +184,7 @@ label:has(+ input:required):after {
     background-color: #231c70;
     color: #fff;
     border-radius: 20px;
-    text-decoration: none;
-}
-
-.box-term {
-    /* background: #fff; */
-    border-radius: 20px;
+    border: none;
 }
 
 .btn-yearly {
@@ -409,153 +224,6 @@ label:has(+ input:required):after {
     font-size: 12px;
     font-weight: bold;
     color: #adadad;
-}
-/* css cho blog-post */
-
-.blog-container {
-    font-family: "Be Vietnam Pro", sans-serif;
-    width: 700px;
-    margin-left: auto;
-    margin-right: auto;
-    padding-top: 10px;
-    padding-bottom: 10px;
-}
-
-.blog-container h1 {
-    margin: 2rem 0;
-}
-
-.blog-container p,
-blockquote {
-    margin: 1.5rem 0;
-}
-.blog-container blockquote {
-    font-style: italic;
-}
-.blog-container img {
-    width: 100%;
-}
-.blog-container img + em {
-    font-style: italic;
-    text-align: center;
-    display: block;
-}
-
-.blog-container table {
-    border-collapse: collapse;
-    width: 100%;
-    text-align: left;
-}
-.blog-container th,
-td {
-    padding: 8px;
-}
-.blog-container tr:first {
-    background-color: #f2f2f2;
-}
-/* .blog-container ul {
-    list-style-type: disc;
-    padding-inline-start: 2.5rem;
-} */
-
-.blog-container .comment-box {
-    margin-top: 5rem;
-}
-.blog-container .comment-box img {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    display: inline-block;
-}
-.blog-container .comment-compose,
-.comment {
-    margin-bottom: 1.5rem;
-}
-.blog-container .comment-compose {
-    height: 70px;
-    line-height: 50px;
-    border: 1px solid #bdbdbd;
-    border-radius: 8px;
-    text-align: center;
-    padding: 5px 10px 10px 10px;
-}
-
-.blog-container .comment-box img,
-input,
-button,
-.comment-author-name {
-    vertical-align: middle;
-}
-.blog-container .comment-author-name {
-    display: inline-block;
-    margin-left: 15px;
-    font-weight: 600;
-}
-.blog-container .comment-message {
-    padding-left: 60px;
-}
-.blog-container .comment {
-    padding-left: 15px;
-    margin-bottom: 15px;
-    border-radius: 10px;
-    background-color: #f4fafd;
-}
-.blog-container .input-comment-compose {
-    width: 78%;
-    height: 115%;
-    border: none;
-    padding: 0 10px;
-}
-.blog-container .btn-comment-compose {
-    border: none;
-    padding: 10px 30px;
-    border-radius: 10px;
-    background-color: #a7a7a7;
-    color: #fff;
-    font-weight: 600;
-}
-.blog-container .btn-comment-compose:active {
-    background-color: #666666;
-}
-
-/* Sử dụng ::first-letter để tạo kiểu drop cap (chữ cái đầu lớn) cho đoạn văn đầu tiên */
-.blog-container p:first-of-type::first-letter {
-    font-size: 7.5rem;
-    font-weight: 600;
-    float: left;
-    line-height: 1;
-}
-/* Sử dụng ::first-line để làm nổi bật dòng đầu tiên của mỗi đoạn */
-.blog-container p::first-line {
-    color: #6d2c2c;
-}
-/* Tùy chỉnh ::selection để thay đổi màu khi người dùng bôi đen văn bản */
-.blog-container::selection {
-    background-color: #6d2c2c;
-    color: #edeef7;
-}
-/* Sử dụng ::before để thêm dấu ngoặc kép trang trí cho các đoạn trích dẫn (nội dung cần bổ sung đoạn trích dẫn blockquote) */
-.blog-container blockquote::before {
-    content: "❝ ";
-    color: red;
-}
-.blog-container blockquote::after {
-    content: " ❞";
-    color: red;
-}
-/* Dùng :not() để áp dụng style cho tất cả heading ngoại trừ h1 */
-.blog-container :is(h1, h2, h3):not(h1) {
-    color: #746c6c;
-}
-/* Tạo phần comment với hiệu ứng hover cho từng comment */
-.blog-container .comment:hover {
-    outline: solid 2px #c2c8dd;
-}
-
-/* Sử dụng :nth-of-type() để tạo kiểu khác nhau cho các phần tử cùng loại */
-.blog-container .comment:nth-of-type(odd) {
-    background-color: #e8f0f8aa;
-    border-radius: 10px;
 }
 
 /* css trang product-list */
@@ -722,10 +390,12 @@ button,
     gap:16px;
 }
 .register-page .login-form .form-text{
-
     padding: 8px;
     border: 1px solid var(--color2);
     border-radius: 8px;
+}
+.register-page .form-label {
+    font-weight: 500;
 }
 .register-page .input-wrapper{
     display: flex;
@@ -754,3 +424,17 @@ button,
     background-color: #fff;
 }
 
+.froggy-container{
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    align-items: center;
+}
+.froggy-container figure{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.froggy-container img{
+    width: 800px;
+}
